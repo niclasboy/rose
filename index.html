@@ -47,7 +47,6 @@
             /* background: black; */
             /* width: 100px;
             height: var(--petals-height); */
-            width: 100px;
             height: 110px;
             position: relative;
             z-index: 2;
@@ -69,14 +68,14 @@
         }
         .petal--right{
             right: 0;
-            transform:rotate(15deg);
+            transform:rotate(-20deg);
             border-top-left-radius: 95% 70%;
             border-top-right-radius: 5% 50%;
             border-bottom-right-radius: 50% 50%;
             border-bottom-left-radius: 50% 30%;
         }
         .petal--left{
-            transform: rotate(-15deg);
+            transform: rotate(20deg);
             border-top-right-radius: 95% 70%;
             border-top-left-radius: 5% 50%;
             border-bottom-left-radius: 50% 50%;
@@ -110,7 +109,8 @@
             position: relative;
             justify-content: center;
             /* flex-grow: 1; */
-            height: 460px;
+            /*height: 460px; */
+            height: 100px;
         }
         .rose__stem{
             background: var(--bg-stem);
@@ -153,7 +153,7 @@
             border: 0px solid rgba(0,0,0,0);
             width: 0;
             height: 0;
-            border-width: 15px;
+            /* border-width: 15px; */
             /* margin-top: 5px; */
         }
         .thorn--left{
@@ -278,4 +278,52 @@
         </div>
     </div>   
 </body>
+
+<script>
+    anime({
+        targets: '.thorn',
+        // width: ['0', '159px'],
+        borderWidth: '15px',
+        duration: 1000,
+        delay: anime.stagger(300),
+        easing: 'easeInOutElastic'
+    })
+
+    anime({
+        targets: '.leaf__petiole',
+        width: ['0', '150px'],
+        duration: 1500,
+        delay: 1000
+    })
+
+    anime({
+        targets: '.rose__stem-container',
+        height: '460px',
+        duration: 2000,
+        easing: 'easeInSine'
+    })
+    anime({
+        targets: '.petal--right',
+        rotate: ['-20deg' , '15deg'],
+        duration: 1500,
+        delay: anime.stagger(500),
+        easing: 'linear'
+    })
+    anime({
+        targets: '.petal--left',
+        rotate: ['20deg', '-15deg'],
+        duration: 1500,
+        delay: anime.stagger(500),
+        easing: 'linear',
+    })
+    anime({
+        targets: '.rose__petals',
+        width: '100px',
+        height: '110px',
+        duration: '2000',
+        easing: 'linear'
+    })
+    
+</script>
+
 </html>
